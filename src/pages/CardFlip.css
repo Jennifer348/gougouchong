@@ -1,0 +1,1280 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Zcool+KuaiLe&family=Great+Vibes&display=swap');
+
+.flip-page {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/assets/kraft-paper-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Selection screen - card fan layout */
+.card-selection-area {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card-fan-container {
+  position: relative;
+  width: 1200px;
+  height: 700px;
+  perspective: 1000px;
+}
+
+.card-hover-zone {
+  transform-origin: center;
+}
+
+.card-thumbnail {
+  display: block;
+  border-radius: 18px;
+  transition: all 0.2s ease;
+}
+
+/* Flip view - single card in center */
+.flip-view {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  font-weight: 300;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  z-index: 10;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:hover {
+  color: #f0f0f0;
+}
+
+.centered-card-wrapper {
+  width: 340px;
+  height: 460px;
+  perspective: 1000px;
+}
+
+/* 3D Flip Container */
+.flip-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.flip-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-front {
+  z-index: 2;
+}
+
+.flip-back {
+  z-index: 1;
+  background-image: url('/assets/card-back-texture.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+}
+
+/* Card back content */
+.card-back-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  gap: 30px;
+  position: relative;
+}
+
+.greeting {
+  font-size: 24px;
+  font-weight: 400;
+  color: #666;
+  margin: 0 0 20px 0;
+  font-family: 'Caveat', cursive;
+  letter-spacing: 0px;
+}
+
+.back-text {
+  font-size: 42px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 280px;
+  font-family: 'Caveat', cursive;
+  letter-spacing: 0px;
+}
+
+.button-group {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.rough-button {
+  background: transparent;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Caveat', cursive;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.ref-number {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+/* Second question screen */
+.second-question-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.question-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.question-text {
+  font-size: 56px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  font-family: 'Caveat', cursive;
+  letter-spacing: 0px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.choices-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.choice-button {
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  padding: 20px 40px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Caveat', cursive;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.2s ease;
+  position: relative;
+  min-width: 280px;
+  justify-content: center;
+}
+
+.choice-button:hover {
+  background-color: rgba(51, 51, 51, 0.05);
+  transform: scale(1.05);
+}
+
+.choice-button:active {
+  transform: scale(0.98);
+}
+
+.choice-emoji {
+  font-size: 36px;
+  display: inline-block;
+}
+
+.choice-text {
+  white-space: nowrap;
+}
+
+/* Back arrow button */
+.back-arrow-button {
+  position: fixed;
+  top: 32px;
+  left: 32px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  font-weight: 300;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  z-index: 10;
+  padding: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.back-arrow-button:hover {
+  opacity: 0.7;
+}
+
+.back-arrow-button:active {
+  opacity: 0.5;
+}
+
+/* Film input screen */
+.film-input-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.film-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #333;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: 'Caveat', cursive;
+  color: #333;
+  padding: 10px 0;
+  outline: none;
+  min-width: 350px;
+  transition: border-color 0.2s ease;
+}
+
+.film-input::placeholder {
+  color: #ccc;
+}
+
+.film-input:focus {
+  border-bottom-color: #666;
+}
+
+.checkmark-button {
+  background: none;
+  border: none;
+  font-size: 36px;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.checkmark-button:hover {
+  color: #666;
+  transform: scale(1.1);
+}
+
+.checkmark-button:active {
+  transform: scale(0.95);
+}
+
+/* Invitation screen */
+.invitation-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-image: url('/assets/kraft-paper-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.invitation-content {
+  width: 340px;
+  height: 460px;
+  background-image: url('/assets/card-back-texture.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.invitation-text {
+  font-size: 24px;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+  font-family: 'Caveat', cursive;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: center;
+  min-height: 200px;
+}
+
+.send-button {
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Caveat', cursive;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.send-button:hover {
+  color: #666;
+  transform: scale(1.05);
+}
+
+.send-button:active {
+  transform: scale(0.98);
+}
+
+/* Email sent screen */
+.email-sent-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-image: url('/assets/kraft-paper-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.email-sent-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.sent-emoji {
+  font-size: 80px;
+  margin: 0;
+  color: #333;
+}
+
+.sent-text {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  font-family: 'Caveat', cursive;
+  text-align: center;
+}
+
+.dashboard-button {
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Caveat', cursive;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+.dashboard-button:hover {
+  color: #666;
+  transform: scale(1.05);
+}
+
+.dashboard-button:active {
+  transform: scale(0.98);
+}
+
+/* Selfie screen */
+.selfie-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background: #000;
+}
+
+.selfie-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.camera-container {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.camera-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.captured-image-container {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.captured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.capture-button {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  font-size: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.capture-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+}
+
+.capture-button:active {
+  transform: scale(0.95);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.action-btn {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'Caveat', cursive;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.action-btn:active {
+  transform: scale(0.98);
+}
+
+.save-btn {
+  border-color: #4CAF50;
+  color: #4CAF50;
+}
+
+.save-btn:hover {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.share-btn {
+  border-color: #2196F3;
+  color: #2196F3;
+}
+
+.share-btn:hover {
+  background: rgba(33, 150, 243, 0.1);
+}
+
+/* Payment warning screen */
+.payment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.payment-modal {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffe6f0 100%);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 3px solid #ff69b4;
+  font-family: 'Zcool KuaiLe', sans-serif;
+}
+
+.payment-warning {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+  text-align: center;
+  color: #d63384;
+}
+
+.payment-text {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 24px 0;
+  color: #333;
+}
+
+.payment-details {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  border: 2px dashed #ff69b4;
+}
+
+.payment-details p {
+  margin: 12px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.payment-name {
+  font-weight: bold;
+  color: #d63384;
+}
+
+.payment-amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff1493;
+}
+
+.payment-risk {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.payment-risk-text {
+  color: #ff1493;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.payment-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.payment-btn {
+  background: white;
+  border: 2px solid #ff69b4;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Zcool KuaiLe', sans-serif;
+  color: #d63384;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 100px;
+}
+
+.payment-btn:hover {
+  background: #ff69b4;
+  color: white;
+  transform: scale(1.05);
+}
+
+.payment-btn:active {
+  transform: scale(0.98);
+}
+
+.confirm-btn {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.confirm-btn:hover {
+  background: #28a745;
+  color: white;
+}
+
+.report-btn {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.report-btn:hover {
+  background: #dc3545;
+  color: white;
+}
+
+.unsure-btn {
+  border-color: #ffc107;
+  color: #ffc107;
+}
+
+.unsure-btn:hover {
+  background: #ffc107;
+  color: white;
+}
+
+/* Payment response screen */
+.payment-response-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.payment-response-modal {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffe6f0 100%);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 3px solid #ff69b4;
+  text-align: center;
+  font-family: 'Zcool KuaiLe', sans-serif;
+}
+
+.response-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+.photo-preview {
+  margin: 24px auto;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid #ff69b4;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jennifer-photo-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.jennifer-photo {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.photo-placeholder {
+  width: 240px;
+  height: 240px;
+  background: linear-gradient(135deg, #fff9e6 0%, #ffe6f0 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ff69b4;
+}
+
+.placeholder-text {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  padding: 16px;
+}
+
+.close-response-btn {
+  background: #ff69b4;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Zcool KuaiLe', sans-serif;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 16px;
+}
+
+.close-response-btn:hover {
+  background: #ff1493;
+  transform: scale(1.05);
+}
+
+.close-response-btn:active {
+  transform: scale(0.98);
+}
+
+.force-confirm {
+  background: #28a745;
+  border: 2px solid #28a745;
+}
+
+.force-confirm:hover {
+  background: #20c997;
+  border-color: #20c997;
+}
+
+/* Playlist share screen */
+.playlist-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: #666;
+  margin: 0 0 40px 0;
+  line-height: 1.8;
+  max-width: 400px;
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 0.5px;
+}
+
+.music-apps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.music-app-btn {
+  background: white;
+  border: 3px solid #333;
+  border-radius: 16px;
+  padding: 24px 32px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Caveat', cursive;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.2s ease;
+  width: 100%;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.music-app-btn:hover {
+  background-color: rgba(51, 51, 51, 0.05);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.music-app-btn:active {
+  transform: scale(0.98);
+}
+
+.netease-btn {
+  border-color: #d81e06;
+}
+
+.netease-btn:hover {
+  border-color: #d81e06;
+  background: rgba(216, 30, 6, 0.05);
+}
+
+.qq-btn {
+  border-color: #31a7de;
+}
+
+.qq-btn:hover {
+  border-color: #31a7de;
+  background: rgba(49, 167, 222, 0.05);
+}
+
+.app-emoji {
+  font-size: 32px;
+}
+
+.app-name {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* Ask Me Anything Screen */
+.amq-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-image: url('/assets/kraft-paper-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.amq-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 500px;
+  padding: 40px;
+}
+
+.amq-question {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  font-family: 'Caveat', cursive;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.amq-input-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+}
+
+.amq-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #333;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Caveat', cursive;
+  color: #333;
+  padding: 10px 0;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.amq-input::placeholder {
+  color: #ccc;
+}
+
+.amq-input:focus {
+  border-bottom-color: #ff69b4;
+}
+
+.amq-checkmark {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #ff69b4;
+  cursor: pointer;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.amq-checkmark:hover {
+  color: #ff1493;
+  transform: scale(1.2);
+}
+
+.amq-checkmark:active {
+  transform: scale(1);
+}
+
+.love-received {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff69b4;
+  margin: 0;
+  font-family: 'Caveat', cursive;
+  text-align: center;
+}
+
+.share-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.amq-share-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.share-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  font-family: 'Caveat', cursive;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  background: white;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Caveat', cursive;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.share-btn:hover {
+  background-color: rgba(51, 51, 51, 0.05);
+  transform: scale(1.05);
+}
+
+.share-btn:active {
+  transform: scale(0.98);
+}
+
+.share-icon {
+  font-size: 20px;
+}
+
+/* Plan a date screen */
+.plan-date-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url('/assets/kraft-paper-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.plan-date-content {
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.plan-date-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  font-family: 'Caveat', cursive;
+}
+
+@media (prefers-color-scheme: dark) {
+  .plan-date-title {
+    color: #e0e0e0;
+  }
+}
+
+.plan-date-inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-field label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+  font-family: 'Caveat', cursive;
+}
+
+@media (prefers-color-scheme: dark) {
+  .input-field label {
+    color: #e0e0e0;
+  }
+}
+
+.plan-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.plan-input:focus {
+  outline: none;
+  border-color: #ff69b4;
+  box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .plan-input {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+  }
+
+  .plan-input:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
+  }
+}
+
+.promise-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  font-family: 'Caveat', cursive;
+  margin-top: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .promise-checkbox {
+    color: #e0e0e0;
+  }
+}
+
+.promise-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #ff69b4;
+}
+
+.plan-date-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.plan-btn {
+  background: white;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Caveat', cursive;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 200px;
+}
+
+.plan-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.plan-btn:not(:disabled):hover {
+  background-color: rgba(51, 51, 51, 0.05);
+  transform: scale(1.05);
+}
+
+.plan-btn:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+@media (prefers-color-scheme: dark) {
+  .plan-btn {
+    background: #2a2a2a;
+    border-color: #888;
+    color: #e0e0e0;
+  }
+
+  .plan-btn:not(:disabled):hover {
+    background-color: rgba(136, 136, 136, 0.2);
+  }
+}
